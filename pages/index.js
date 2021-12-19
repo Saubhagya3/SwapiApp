@@ -28,23 +28,22 @@ export default function Main({ allmovies }) {
         <meta name="description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.searchbox}>
-        {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
-        <input
-            className={styles.search}
-            value={searchValue}
-            onChange={e => setSearchValue(e.target.value)}
-            placeholder="Search movies..."
-        />
-      </div>
-      <Favourites />
-      <main className={styles.body}>
-        {
-          searchValue === "" ? 
-          <MovieList movies={allmovies}/> :
-          <MovieList movies={movies}/>
-        }
-      </main>
+        <div className={styles.searchbox}>
+          <input
+              className={styles.search}
+              value={searchValue}
+              onChange={e => setSearchValue(e.target.value)}
+              placeholder="Search movies..."
+          />
+        </div>
+        <Favourites />
+        <main className={styles.body}>
+          {
+            searchValue === "" ? 
+            <MovieList movies={allmovies}/> :
+            <MovieList movies={movies}/>
+          }
+        </main>
     </div>
   );
 }
