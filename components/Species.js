@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../styles/Component.module.scss'
 
 export default function Species(props) {
     const [ specList, setSpecList ] = useState([])
@@ -10,11 +11,13 @@ export default function Species(props) {
                 const data = await fetch(`https://www.swapi.tech/api/species/?page=1&limit=40`)
                 const json = await data.json()
                 specData.push(...json.results)
-
-                for (let i = 0; i < specData.length; i++){
-                    for(let j = 0; j < props.movie.properties.species.length; j++){
-                        if (specData[i].url === props.movie.properties.species[j]) {
-                            specList.push(specData[i])
+                
+                if(specList.length===0){
+                    for (let i = 0; i < specData.length; i++){
+                        for(let j = 0; j < props.movie.properties.species.length; j++){
+                            if (specData[i].url === props.movie.properties.species[j]) {
+                                specList.push(specData[i])
+                            }
                         }
                     }
                 }
@@ -28,13 +31,13 @@ export default function Species(props) {
         <div>
             <h3>Species</h3>
             <div>
-                <ul>
+                <ul className={styles.list}>
                     {
-                        loading ? <li>Loading Species...</li> :
+                        loading ? <li className={styles.listitem}>Loading Species...</li> :
                         specList.map(spec => {
                             return(
                                 <>
-                                    <li key={spec.uid}>{spec.name}</li>
+                                    <li key={spec.uid} className={styles.listitem}>{spec.name}</li>
                                 </>
                             )
                         })

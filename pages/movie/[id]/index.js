@@ -21,25 +21,40 @@ export default function Movie({ movie }) {
                 <div className={moviestyles.head}>
                     <h1 className={moviestyles.title}>{movie.properties.title}</h1>
                     <h3>Episode {movie.properties.episode_id}</h3>
-                    <h3>Release date: {movie.properties.release_date}</h3>
+                    <h3>Release date: </h3>
+                    <p className={moviestyles.text}>{movie.properties.release_date}</p>
                 </div>
-                <h3>Summary</h3>
-                <p className={moviestyles.text}>{movie.properties.opening_crawl}</p>
-                <div className={moviestyles.staff}>
-                    <div>
-                        <h3>Director </h3>
-                        <p className={moviestyles.text}>{movie.properties.director}</p>
-                    </div>
-                    <div>
-                        <h3>Producers </h3>
-                        <p className={moviestyles.text}>{movie.properties.producer}</p>
+                <div className={moviestyles.box}>
+                    <h3>Summary</h3>
+                    <p className={moviestyles.text}>{movie.properties.opening_crawl}</p>
+                </div>
+                <div className={moviestyles.box}>
+                    <div className={moviestyles.staff}>
+                        <div>
+                            <h3>Director </h3>
+                            <p className={moviestyles.text}>{movie.properties.director}</p>
+                        </div>
+                        <div>
+                            <h3>Producers </h3>
+                            <p className={moviestyles.text}>{movie.properties.producer}</p>
+                        </div>
                     </div>
                 </div>
-                <Characters movie={movie}/>
-                <Planets movie={movie} />
-                <Starships movie={movie}/>
-                <Vehicles movie={movie}/>
-                <Species movie={movie} />
+                <div className={moviestyles.box}>
+                    <Characters movie={movie}/>
+                </div>
+                <div className={moviestyles.box}>
+                    <Planets movie={movie} />
+                </div>
+                <div className={moviestyles.box}>
+                    <Starships movie={movie}/>
+                </div>
+                <div className={moviestyles.box}>
+                    <Vehicles movie={movie}/>
+                </div>
+                <div className={moviestyles.box}>
+                    <Species movie={movie} />
+                </div>
             </div>
         </div>
     )

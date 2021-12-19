@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../styles/Component.module.scss'
 
 export default function Vehicles(props) {
     const [ vehiList, setVehiList ] = useState([])
@@ -11,10 +12,12 @@ export default function Vehicles(props) {
                 const json = await data.json()
                 vehiData.push(...json.results)
 
-                for (let i = 0; i < vehiData.length; i++){
-                    for(let j = 0; j < props.movie.properties.vehicles.length; j++){
-                        if (vehiData[i].url === props.movie.properties.vehicles[j]) {
-                            vehiList.push(vehiData[i])
+                if(vehiList.length===0){
+                    for (let i = 0; i < vehiData.length; i++){
+                        for(let j = 0; j < props.movie.properties.vehicles.length; j++){
+                            if (vehiData[i].url === props.movie.properties.vehicles[j]) {
+                                vehiList.push(vehiData[i])
+                            }
                         }
                     }
                 }
@@ -28,13 +31,13 @@ export default function Vehicles(props) {
         <div>
             <h3>Vehicles</h3>
             <div>
-                <ul>
+                <ul className={styles.list}>
                     {
-                        loading ? <li>Loading Vehicles...</li> :
+                        loading ? <li className={styles.listitem}>Loading Vehicles...</li> :
                         vehiList.map(vehi => {
                             return(
                                 <>
-                                    <li key={vehi.uid}>{vehi.name}</li>
+                                    <li key={vehi.uid} className={styles.listitem}>{vehi.name}</li>
                                 </>
                             )
                         })

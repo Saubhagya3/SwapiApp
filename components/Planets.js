@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../styles/Component.module.scss'
 
 export default function Planets(props) {
     const [ planList, setPlanList ] = useState([])
@@ -11,10 +12,12 @@ export default function Planets(props) {
                 const json = await data.json()
                 planData.push(...json.results)
 
-                for (let i = 0; i < planData.length; i++){
-                    for(let j = 0; j < props.movie.properties.planets.length; j++){
-                        if (planData[i].url === props.movie.properties.planets[j]) {
-                            planList.push(planData[i])
+                if(planList.length===0){
+                    for (let i = 0; i < planData.length; i++){
+                        for(let j = 0; j < props.movie.properties.planets.length; j++){
+                            if (planData[i].url === props.movie.properties.planets[j]) {
+                                planList.push(planData[i])
+                            }
                         }
                     }
                 }
@@ -28,13 +31,13 @@ export default function Planets(props) {
         <div>
             <h3>Planets</h3>
             <div>
-                <ul>
+                <ul className={styles.list}>
                     {
-                        loading ? <li>Loading Planets...</li> :
+                        loading ? <li className={styles.listitem}>Loading Planets...</li> :
                         planList.map(plan => {
                             return(
                                 <>
-                                    <li key={plan.uid}>{plan.name}</li>
+                                    <li key={plan.uid} className={styles.listitem}>{plan.name}</li>
                                 </>
                             )
                         })

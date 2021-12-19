@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../styles/Component.module.scss'
 
 export default function Starships(props) {
     const [ starList, setStarList ] = useState([])
@@ -11,10 +12,12 @@ export default function Starships(props) {
                 const json = await data.json()
                 starData.push(...json.results)
 
-                for (let i = 0; i < starData.length; i++){
-                    for(let j = 0; j < props.movie.properties.starships.length; j++){
-                        if (starData[i].url === props.movie.properties.starships[j]) {
-                            starList.push(starData[i])
+                if(starList.length===0){
+                    for (let i = 0; i < starData.length; i++){
+                        for(let j = 0; j < props.movie.properties.starships.length; j++){
+                            if (starData[i].url === props.movie.properties.starships[j]) {
+                                starList.push(starData[i])
+                            }
                         }
                     }
                 }
@@ -28,13 +31,13 @@ export default function Starships(props) {
         <div>
             <h3>Starships</h3>
             <div>
-                <ul>
+                <ul className={styles.list}>
                     {
-                        loading ? <li>Loading Starships...</li> :
+                        loading ? <li className={styles.listitem}>Loading Starships...</li> :
                         starList.map(star => {
                             return(
                                 <>
-                                    <li key={star.uid}>{star.name}</li>
+                                    <li key={star.uid} className={styles.listitem}>{star.name}</li>
                                 </>
                             )
                         })

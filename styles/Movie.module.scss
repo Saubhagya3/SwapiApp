@@ -6,10 +6,12 @@
     padding: 20px;
     display: grid;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
 }
 
 .head {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .title {
@@ -41,6 +43,20 @@
     transition: .5s;
 }
 
+.box {
+    background-color: $mainbackground;
+    border-radius: 15px;
+    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.20);
+    padding: 10px;
+    width: 100%;
+    color: $secondarycolor;
+    margin-bottom: 30px;
+    list-style: none;
+    @media (max-width: 550px) {
+        text-align: center;
+    }
+}
+
 .content {
 }
 
@@ -51,8 +67,9 @@
 .staff {
     display: inline-flex;
     flex-wrap: wrap;
-}
-
-.staff > div {
-    flex-basis: 50%;
+    gap: 30vw;
+    @media (max-width: 750px) {
+        display: grid;
+        gap: 8vw;
+    }
 }
