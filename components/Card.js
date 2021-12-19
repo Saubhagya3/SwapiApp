@@ -18,7 +18,7 @@ export default function Card({ movie }) {
         <h2 className={styles.subtitle}>
           Episode {movie.properties.episode_id}
         </h2>
-        <h2 className={styles.subtitle}>Click to more details...</h2>
+        <h2 className={styles.subtitle}>Click to view more details...</h2>
         <button className={styles.favorite} onClick={handleClick}>
           {fav ? "Favourite" : "Un-Favorite"}
         </button>
