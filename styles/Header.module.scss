@@ -1,0 +1,23 @@
+@import '../variables/Variables.scss';
+
+.navbar {
+    width: 100%;
+    height: fit-content;
+    background-color: $headerbackground;
+    top: 0;
+    padding: 2.5rem 0;
+    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
+
+    .title {
+        font-size: $titledesktop;
+        font-weight: 100;
+        color: $maincolor;
+        font-family: $mainfont;
+        margin: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: fit-content;
+        cursor: pointer;
+    }
+}
+

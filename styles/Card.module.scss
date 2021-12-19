@@ -1,0 +1,51 @@
+@import '../variables/Variables.scss';
+
+.card {
+    background-color: $mainbackground;
+    padding: 3rem;
+    width: 100%;
+    margin-bottom: 7rem;
+    font-family: $secondaryfont;
+    color: $secondarycolor;
+    display: grid;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
+    cursor: pointer;
+
+    .title {
+        font-size: $movietitle;
+        margin: 0;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    .divide {
+        font-family: monospace;
+        font-size: 32px;
+        color: white;
+        margin: 0;
+    }
+
+    .favorite {
+        width: fit-content;
+        height: fit-content;
+        font-family: monospace;
+        font-size: large;
+        font-weight: bold;
+        padding: .5rem;
+        color: $secondarycolor;
+        background-color: #af171e;
+        border: 1px solid#881d20;
+        border-radius: 20%;
+        transition: .5s;
+    }
+
+    .favorite:hover {
+        background-color: green;
+        transition: .5s;
+    }
+}
