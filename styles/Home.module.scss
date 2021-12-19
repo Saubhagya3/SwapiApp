@@ -19,7 +19,7 @@
 
 .search {
     border: solid $mainbackground;
-    background-color: $favbackground;
+    background-color: rgba(254,251,245,0.85);
     border-radius: 15px;
     font-size: large;
     width: 30vw;
@@ -46,7 +46,7 @@
     height: 50vh;
     margin-bottom: 3rem;
     flex-direction: column;
-    background-color: $favbackground;
+    background-image: $favbackground;
     padding: 15px 15px;
     border-radius: 15px;
 }

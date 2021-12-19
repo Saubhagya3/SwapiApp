@@ -2,6 +2,11 @@
 
 .container {
   padding: 0;
+  background: url(../public/bgimage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -10;
+  background-attachment: fixed;
 }
 
 .main {
@@ -15,6 +20,8 @@
 .footer {
   display: flex;
   flex: 1;
+  background-color: $headerbackground;
+  color: $maincolor;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;

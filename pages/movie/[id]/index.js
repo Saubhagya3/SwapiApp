@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import Characters from '../../../components/Characters'
 import Vehicles from '../../../components/Vehicles';
 import Planets from '../../../components/Planets';
@@ -10,6 +11,11 @@ export default function Movie({ movie }) {
 
     return(
         <div className={moviestyles.body}>
+            <Head>
+                <title>{movie.properties.title}</title>
+                <meta name="description" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={moviestyles.back}>
                 <Link href='/'>
                     <h2 className={moviestyles.backbutton}> 
