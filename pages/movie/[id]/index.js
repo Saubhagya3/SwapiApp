@@ -21,7 +21,6 @@ export default function Movie({ movie }) {
                 <div className={moviestyles.head}>
                     <h1 className={moviestyles.title}>{movie.properties.title}</h1>
                     <h3>Episode {movie.properties.episode_id}</h3>
-                    <h3>Release date: </h3>
                     <p className={moviestyles.text}>{movie.properties.release_date}</p>
                 </div>
                 <div className={moviestyles.box}>
