@@ -4,6 +4,34 @@
     display: grid;
 }
 
+.searchbox {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    margin: 10px;
+    float: right;
+    padding-right: auto;
+}
+
+.search {
+    border: solid $mainbackground;
+    background-color: $favbackground;
+    border-radius: 15px;
+    font-size: large;
+    width: 30vw;
+    height: fit-content;
+    padding: 6px;
+    padding-left: 8px;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search:hover {
+    border: solid $favbackground;
+    background-color: #fff;
+}
+
 .favourites {
     display: flex;
     width: 100%;

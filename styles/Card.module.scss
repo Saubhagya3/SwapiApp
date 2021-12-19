@@ -12,6 +12,7 @@
     border-radius: 15px;
     box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
     cursor: pointer;
+    transition: .2s;
 
     .title {
         font-size: $movietitle;
@@ -48,4 +49,9 @@
         background-color: green;
         transition: .5s;
     }
+}
+
+.card:hover {
+    background-color: $headerbackground;
+    transition: .2s;
 }

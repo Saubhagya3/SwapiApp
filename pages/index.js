@@ -1,9 +1,26 @@
-import Head from "next/head";
-import MovieList from "../components/MovieList";
+import { useState, useEffect } from 'react'
+import Head from "next/head"
+import MovieList from "../components/MovieList"
 import Favourites from '../components/Favourites'
 import styles from '../styles/Home.module.scss'
+import SearchBar from '../components/SearchBar'
 
-export default function Main({ movies }) {
+export default function Main({ allmovies }) {
+  const [ movies, setMovies ] = useState([])
+  const [ searchValue, setSearchValue ] = useState("")
+
+  const searchFunction = async (searchVal) => {
+      const data = await fetch(`https://www.swapi.tech/api/films/?search=${searchVal}`)
+      const json = await data.json()
+      
+      console.log(json)
+      setMovies(json)
+  }
+
+  useEffect(() => {
+    searchFunction(searchValue)
+  }, [searchValue])
+
   return (
     <div>
       <Head>
@@ -11,9 +28,22 @@ export default function Main({ movies }) {
         <meta name="description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.searchbox}>
+        {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+        <input
+            className={styles.search}
+            value={searchValue}
+            onChange={e => setSearchValue(e.target.value)}
+            placeholder="Search movies..."
+        />
+      </div>
       <Favourites />
       <main className={styles.body}>
-        <MovieList movies={movies}/>
+        {
+          searchValue === "" ? 
+          <MovieList movies={allmovies}/> :
+          <MovieList movies={movies}/>
+        }
       </main>
     </div>
   );
@@ -21,7 +51,7 @@ export default function Main({ movies }) {
 
 export const getStaticProps = async () => {
   const res = await fetch(`https://www.swapi.tech/api/films/`)
-  const movies = await res.json()
+  const allmovies = await res.json()
 
-  return {props: { movies } }
+  return {props: { allmovies } }
 }

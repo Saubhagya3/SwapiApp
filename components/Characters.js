@@ -36,11 +36,11 @@ export default function Characters(props) {
             <div>
                 <ul className={styles.list}>
                     {
-                        loading ? <li className={styles.listitem}>Loading Characters...</li> :
+                        loading ? <li className={styles.charlistitem}>Loading Characters...</li> :
                         charList.map(char => {
                             return(
                                 <>
-                                    <li key={char.uid} className={styles.listitem}>{char.name}</li>
+                                    <li key={char.uid} className={styles.charlistitem}>{char.name}</li>
                                 </>
                             )
                         })

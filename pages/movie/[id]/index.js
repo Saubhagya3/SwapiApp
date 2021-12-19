@@ -74,7 +74,6 @@ export const getStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
     const res = await fetch(`https://www.swapi.tech/api/films/`)
-
     const movies = await res.json()
     
     const ids = movies.result.map(movie => movie.uid)
