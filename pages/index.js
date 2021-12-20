@@ -39,6 +39,7 @@ export default function Main({ allmovies }) {
 
   const addFavouriteMovie = (movies, e) => {
     e.stopPropagation();
+    console.log("Index movies", movies)
     const newFavouriteList = [...favourites, movies];
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
