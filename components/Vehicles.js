@@ -21,7 +21,6 @@ export default function Vehicles(props) {
                         }
                     }
                 }
-            console.log(vehiList)
             setLoading(false)
         }
         fetchVehiData()
@@ -36,9 +35,7 @@ export default function Vehicles(props) {
                         loading ? <li className={styles.listitem}>Loading Vehicles...</li> :
                         vehiList.map(vehi => {
                             return(
-                                <>
-                                    <li key={vehi.uid} className={styles.listitem}>{vehi.name}</li>
-                                </>
+                                <li key={vehi.uid} className={styles.listitem}>{vehi.name}</li>
                             )
                         })
                     }

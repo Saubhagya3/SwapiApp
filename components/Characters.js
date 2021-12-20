@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Character from './Character'
+import Tooltip from './Tooltip'
 import styles from '../styles/Component.module.scss'
 
 export default function Characters(props) {
@@ -8,7 +8,6 @@ export default function Characters(props) {
     
     useEffect(() => {
         const fetchCharData = async () => {
-                
             const charData = []
             const data = await fetch(`https://www.swapi.tech/api/people/?page=1&limit=85`)
             const json = await data.json()
@@ -23,8 +22,6 @@ export default function Characters(props) {
                     }
                 }
             }
-                
-            console.log(charList)
             setLoading(false)
         }
         fetchCharData()
@@ -34,14 +31,18 @@ export default function Characters(props) {
         <div>
             <h3>Characters</h3>
             <div>
-                <ul className={styles.list}>
+                <ul className={styles.charlist}>
                     {
                         loading ? <li className={styles.charlistitem}>Loading Characters...</li> :
                         charList.map(char => {
                             return(
-                                <>
-                                    <li key={char.uid} className={styles.charlistitem}>{char.name}</li>
-                                </>
+                                <li
+                                    key={char.uid} 
+                                    className={styles.charlistitem} 
+                                >
+                                        <Tooltip url={char.url} />
+                                        {char.name}
+                                </li>
                             )
                         })
                     }

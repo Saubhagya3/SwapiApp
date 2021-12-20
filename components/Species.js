@@ -21,7 +21,6 @@ export default function Species(props) {
                         }
                     }
                 }
-            console.log(specList)
             setLoading(false)
         }
         fetchSpecData()
@@ -36,9 +35,7 @@ export default function Species(props) {
                         loading ? <li className={styles.listitem}>Loading Species...</li> :
                         specList.map(spec => {
                             return(
-                                <>
-                                    <li key={spec.uid} className={styles.listitem}>{spec.name}</li>
-                                </>
+                                <li key={spec.uid} className={styles.listitem}>{spec.name}</li>
                             )
                         })
                     }

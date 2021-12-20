@@ -21,7 +21,6 @@ export default function Planets(props) {
                         }
                     }
                 }
-            console.log(planList)
             setLoading(false)
         }
         fetchPlanData()
@@ -36,9 +35,7 @@ export default function Planets(props) {
                         loading ? <li className={styles.listitem}>Loading Planets...</li> :
                         planList.map(plan => {
                             return(
-                                <>
-                                    <li key={plan.uid} className={styles.listitem}>{plan.name}</li>
-                                </>
+                                <li key={plan.uid} className={styles.listitem}>{plan.name}</li>
                             )
                         })
                     }

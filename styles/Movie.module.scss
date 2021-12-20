@@ -57,9 +57,6 @@
     }
 }
 
-.content {
-}
-
 .text {
     font-weight: 500;
 }
@@ -68,7 +65,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     gap: 30vw;
-    @media (max-width: 750px) {
+    @media (max-width: 1048px) {
         display: grid;
         gap: 8vw;
     }

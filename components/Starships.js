@@ -21,7 +21,6 @@ export default function Starships(props) {
                         }
                     }
                 }
-            console.log(starList)
             setLoading(false)
         }
         fetchStarData()
@@ -36,9 +35,7 @@ export default function Starships(props) {
                         loading ? <li className={styles.listitem}>Loading Starships...</li> :
                         starList.map(star => {
                             return(
-                                <>
-                                    <li key={star.uid} className={styles.listitem}>{star.name}</li>
-                                </>
+                                <li key={star.uid} className={styles.listitem}>{star.name}</li>
                             )
                         })
                     }
