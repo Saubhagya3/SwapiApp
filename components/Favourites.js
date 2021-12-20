@@ -2,11 +2,12 @@ import styles from "../styles/Favourites.module.scss";
 import Link from "next/link";
 
 export default function Favourites(props) {
+  console.log(props.favs)
   return (
     <div className={styles.favourites}>
       <h1 className={styles.favouritesTitle}>Favourites &#8699;</h1>
       <main className={styles.favouritesBody}>
-        {props.favs.length === 0 ? (
+        {props.favs.length === 0  || props.favs.length === null ? (
           <p>Your favourites list is empty.</p>
         ) : (
           props.favs.map((movie) => {

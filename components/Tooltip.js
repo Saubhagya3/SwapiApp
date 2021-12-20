@@ -13,8 +13,6 @@ export default function Tooltip(props) {
 
         setCharDetails(json.result);
         setLoadingTooltip(false);
-
-        console.log(charDetails);
       }, 2000);
     }
   };

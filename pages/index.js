@@ -72,7 +72,7 @@ export default function Main({ allmovies }) {
         handleFavouritesClicks={removeFavouriteMovie}
       />
       <main className={styles.body}>
-        {searchValue === "" ? (
+        {searchValue === "" || searchValue === null ? (
           <MovieList
             movies={allmovies}
             handleFavouritesClicks={addFavouriteMovie}
