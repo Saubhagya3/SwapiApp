@@ -6,6 +6,7 @@ export default function Tooltip(props) {
   const [loadingTooltip, setLoadingTooltip] = useState(true);
 
   const fetchDetails = (url) => {
+    if (charDetails.length === 0 && charDetails !== null) {
       setTimeout(async () => {
         const data = await fetch(`${url}`);
         const json = await data.json();
@@ -15,6 +16,7 @@ export default function Tooltip(props) {
 
         console.log(charDetails);
       }, 2000);
+    }
   };
 
   useEffect(() => {

@@ -15,7 +15,7 @@ export default function Characters(props) {
       const json = await data.json();
       charData.push(...json.results);
 
-      if (charList.length === 0) {
+      if (charList.length === 0 && charList !== null) {
         for (let i = 0; i < charData.length; i++) {
           for (let j = 0; j < props.movie.properties.characters.length; j++) {
             if (charData[i].url === props.movie.properties.characters[j]) {
