@@ -23,13 +23,16 @@
   color: $mainbackground;
   font-size: larger;
   padding: 20px 0;
-  height: 100%;
+  height: 85%;
   white-space: nowrap;
 }
 
-.favouritesBody::-webkit-scrollbar {
-  display: none;
-}
+// .favouritesBody::-webkit-scrollbar {
+  
+//   @media (max-width: 550px) {
+//     display: none;
+//   }
+// }
 
 .card {
   background-color: $mainbackground;

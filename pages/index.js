@@ -41,9 +41,15 @@ export default function Main({ allmovies }) {
   const addFavouriteMovie = (movies, e) => {
     e.stopPropagation();
     console.log("Index movies", movies)
-    const newFavouriteList = [...favies, movies];
-    setFavies(newFavouriteList);
-    saveToLocalStorage(newFavouriteList);
+    let found = favies.some(item => item.uid === movies.uid)
+    console.log(found)
+    if(found){
+      alert("Oops! This movie is already in your favourites. Please select another movie.")
+    }else{
+      const newFavouriteList = [...favies, movies];
+      setFavies(newFavouriteList);
+      saveToLocalStorage(newFavouriteList);
+    }
   };
 
   const removeFavouriteMovie = (movies, e) => {
