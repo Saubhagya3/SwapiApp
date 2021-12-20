@@ -1,72 +1,76 @@
-@import '../variables/Variables.scss';
+@import "../variables/Variables.scss";
 
-.body{
-    background-image: linear-gradient(to left, rgba(254,251,245,0.3), rgba(254,251,245,1));
-    border-radius: 15px;
-    padding: 20px;
-    display: grid;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
+.body {
+  background-image: linear-gradient(
+    to left,
+    rgba(254, 251, 245, 0.3),
+    rgba(254, 251, 245, 1)
+  );
+  border-radius: 15px;
+  padding: 20px;
+  display: grid;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0px 12px 18px 8px rgba(0, 0, 0, 0.62);
 }
 
 .head {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .title {
-    color: $maincolor;
+  color: $maincolor;
 }
 
 .back {
-    justify-content: right;
+  justify-content: right;
 }
 
 .backbutton {
-    float: right;
-    width: fit-content;
-    height: fit-content;
-    font-family: monospace;
-    font-size: large;
-    font-weight: bold;
-    padding: .5rem;
-    color: $secondarycolor;
-    background-color: #af171e;
-    border: 1px solid#881d20;
-    border-radius: 20%;
-    transition: .5s;
-    cursor: pointer;
+  float: right;
+  width: fit-content;
+  height: fit-content;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: $secondarycolor;
+  background-color: #af171e;
+  border: 1px solid#881d20;
+  border-radius: 20%;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .backbutton:hover {
-    background-color: green;
-    transition: .5s;
+  background-color: green;
+  transition: 0.5s;
 }
 
 .box {
-    background-color: $mainbackground;
-    border-radius: 15px;
-    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.20);
-    padding: 10px;
-    width: 100%;
-    color: $secondarycolor;
-    margin-bottom: 30px;
-    list-style: none;
-    @media (max-width: 550px) {
-        text-align: center;
-    }
+  background-color: $mainbackground;
+  border-radius: 15px;
+  box-shadow: 0px 12px 18px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 100%;
+  color: $secondarycolor;
+  margin-bottom: 30px;
+  list-style: none;
+  @media (max-width: 550px) {
+    text-align: center;
+  }
 }
 
 .text {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .staff {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 30vw;
-    @media (max-width: 1048px) {
-        display: grid;
-        gap: 8vw;
-    }
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 30vw;
+  @media (max-width: 1048px) {
+    display: grid;
+    gap: 8vw;
+  }
 }

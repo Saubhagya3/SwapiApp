@@ -1,43 +1,40 @@
-@import '../variables/Variables.scss';
+@import "../variables/Variables.scss";
 
 .body {
-    display: grid;
+  display: grid;
 }
 
 .searchbox {
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    margin: 10px 0;
-    float: right;
-    padding-right: auto;
-    @media (max-width: 700px) {
-        width: 100%;
-        float: none;
-    }
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  margin: 10px 0;
+  float: right;
+  padding-right: auto;
+  @media (max-width: 700px) {
+    width: 100%;
+    float: none;
+  }
 }
 
 .search {
-    border: solid $mainbackground;
-    background-color: rgba(254,251,245,0.85);
-    border-radius: 15px;
-    font-size: large;
-    width: 30vw;
-    height: fit-content;
-    padding: 6px;
-    padding-left: 8px;
-    justify-content: center;
-    margin-right: auto;
-    margin-left: auto;
-    @media (max-width: 700px) {
-        width: 80%;
-        
-    }
+  border: solid $mainbackground;
+  background-color: rgba(254, 251, 245, 0.85);
+  border-radius: 15px;
+  font-size: large;
+  width: 30vw;
+  height: fit-content;
+  padding: 6px;
+  padding-left: 8px;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  @media (max-width: 700px) {
+    width: 80%;
+  }
 }
 
 .search:hover {
-    border: solid $favbackground;
-    background-color: #fff;
+  border: solid $favbackground;
+  background-color: #fff;
 }
-
-

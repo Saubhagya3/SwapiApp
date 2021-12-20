@@ -1,17 +1,13 @@
-import Head from 'next/head'
-import Header from './Header';
-import Image from 'next/image'
-import styles from '../styles/Layout.module.scss'
+import Header from "./Header";
+import styles from "../styles/Layout.module.scss";
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Header />
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
-          Created by&nbsp;<strong>Saubhagya</strong>
+        Created by&nbsp;<strong>Saubhagya</strong>
       </footer>
     </div>
   );

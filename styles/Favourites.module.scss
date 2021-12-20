@@ -1,115 +1,112 @@
-@import '../variables/Variables.scss';
+@import "../variables/Variables.scss";
 
 .favourites {
-    display: grid;
-    width: 100%;
-    height: 60vh;
-    margin-bottom: 3rem;
-    background-image: $favbackground;
-    padding: 15px 15px;
-    border-radius: 15px;
+  display: grid;
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 3rem;
+  background-image: $favbackground;
+  padding: 15px 15px;
+  border-radius: 15px;
 }
 
-
 .favouritesTitle {
-    color: $mainbackground;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  color: $mainbackground;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .favouritesBody {
-    overflow-x: scroll;
-    display: inline-flex;
-    color: $mainbackground;
-    font-size: larger;
-    padding: 20px 0;
-    height: 100%;
-    white-space: nowrap;
+  overflow-x: scroll;
+  display: inline-flex;
+  color: $mainbackground;
+  font-size: larger;
+  padding: 20px 0;
+  height: 100%;
+  white-space: nowrap;
 }
 
-.favouritesBody::-webkit-scrollbar { 
-    display: none;
+.favouritesBody::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
-    background-color: $mainbackground;
-    padding: 3rem;
-    min-width: 230px;
-    height: 220px;
+  background-color: $mainbackground;
+  padding: 3rem;
+  min-width: 230px;
+  height: 220px;
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-family: $secondaryfont;
+  color: $secondarycolor;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0px 12px 18px 8px rgba(0, 0, 0, 0.62);
+  cursor: pointer;
+  transition: 0.2s;
+  @media (max-width: 1250px) {
+    margin-top: 0;
+    min-width: 250px;
+    height: 200px;
+  }
+  @media (max-width: 550px) {
+    min-width: 250px;
+    height: 180px;
     margin-bottom: 0;
-    margin-right: 20px; 
-    font-family: $secondaryfont;
-    color: $secondarycolor;
+  }
+
+  .title {
+    font-size: $favtitle;
+    margin: 0;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0px 12px 18px 8px rgba(0,0,0,0.62);
-    cursor: pointer;
-    transition: .2s;
-    @media (max-width: 1250px) {
-        margin-top: 0;
-        min-width: 250px;
-        height: 200px;
+    @media (max-width: 700px) {
+      font-size: 12px;
     }
-    @media (max-width: 550px) {
-        min-width: 250px;
-        height: 180px;
-        margin-bottom: 0;
-    }
+  }
 
-    .title {
-        font-size: $favtitle;
-        margin: 0;
-        text-align: center;
-        @media (max-width: 700px) {
-            font-size: 12px;
-        }
+  .subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    @media (max-width: 700px) {
+      font-size: 12px;
+      font-weight: 100;
     }
+  }
 
-    .subtitle {
-        font-size: 16px;
-        font-weight: normal;
-        @media (max-width: 700px) {
-            font-size: 12px;
-            font-weight: 100;
-        }
-    }
-
-    .divide {
-        font-family: monospace;
-        font-size: 32px;
-        color: white;
-        margin: 0;
-    }
-
-    
+  .divide {
+    font-family: monospace;
+    font-size: 32px;
+    color: white;
+    margin: 0;
+  }
 }
 
 .favorite {
-    width: fit-content;
-    height: fit-content;
-    font-family: monospace;
-    font-size: large;
-    font-weight: bold;
-    padding: .5rem;
-    color: $secondarycolor;
-    background-color: green;
-    border: 1px solid#881d20;
-    border-radius: 20%;
-    transition: .5s;
-    justify-content: center;
-    @media (max-width: 700px) {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  width: fit-content;
+  height: fit-content;
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: $secondarycolor;
+  background-color: green;
+  border: 1px solid#881d20;
+  border-radius: 20%;
+  transition: 0.5s;
+  justify-content: center;
+  @media (max-width: 700px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .favorite:hover {
-    background-color: #af171e;
-    transition: .5s;
+  background-color: #af171e;
+  transition: 0.5s;
 }
 
 .favorite:active {
-    background-color: #af171e;
-    transition: .5s;
+  background-color: #af171e;
+  transition: 0.5s;
 }
