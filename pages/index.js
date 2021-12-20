@@ -26,8 +26,9 @@ export default function Main({ allmovies }) {
     const movieFavourites = JSON.parse(
       localStorage.getItem("swapi-app-favourites-saubhagya3")
     );
-
-    setFavies(movieFavourites);
+    movieFavourites !== null ?
+      setFavies(movieFavourites) :
+      setFavies([])
   }, []);
 
   const saveToLocalStorage = (items) => {
