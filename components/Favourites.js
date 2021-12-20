@@ -7,7 +7,7 @@ export default function Favourites(props) {
     <div className={styles.favourites}>
       <h1 className={styles.favouritesTitle}>Favourites &#8699;</h1>
       <main className={styles.favouritesBody}>
-        {props.favs.length === 0  || props.favs === null ? (
+        {props.favs === null ? (
           <p>Your favourites list is empty.</p>
         ) : (
           props.favs.map((movie) => {
