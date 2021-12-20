@@ -3,7 +3,6 @@ import styles from "../styles/Card.module.scss";
 import Link from "next/link";
 
 export default function MovieList(props) {
-  console.log("Movielist props", props)
   return (
     <>
       {props.movies.result.map((movie) => {

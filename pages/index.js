@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.scss";
 export default function Main({ allmovies }) {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [favourites, setFavourites] = useState([]);
+  const [ favies, setFavies ] = useState([]);
 
   const searchFunction = async (searchVal) => {
     const data = await fetch(
@@ -27,7 +27,7 @@ export default function Main({ allmovies }) {
       localStorage.getItem("swapi-app-favourites-saubhagya3")
     );
 
-    setFavourites(movieFavourites);
+    setFavies(movieFavourites);
   }, []);
 
   const saveToLocalStorage = (items) => {
@@ -40,16 +40,16 @@ export default function Main({ allmovies }) {
   const addFavouriteMovie = (movies, e) => {
     e.stopPropagation();
     console.log("Index movies", movies)
-    const newFavouriteList = [...favourites, movies];
-    setFavourites(newFavouriteList);
+    const newFavouriteList = [...favies, movies];
+    setFavies(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
 
   const removeFavouriteMovie = (movies, e) => {
     e.stopPropagation();
-    const newFavouriteList = favourites.filter((fav) => fav.uid != movies.uid);
+    const newFavouriteList = favies.filter((fav) => fav.uid != movies.uid);
 
-    setFavourites(newFavouriteList);
+    setFavies(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
 
@@ -69,7 +69,7 @@ export default function Main({ allmovies }) {
         />
       </div>
       <Favourites
-        favs={favourites}
+        favs={favies}
         handleFavouritesClicks={removeFavouriteMovie}
       />
       <main className={styles.body}>
