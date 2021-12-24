@@ -19,6 +19,9 @@ export default function Tooltip(props) {
 
   useEffect(() => {
     fetchDetails(props.url);
+    return () => {
+      setCharDetails([]);
+    };
   }, []);
 
   return (

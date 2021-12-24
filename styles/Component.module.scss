@@ -21,7 +21,12 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 40vh;
-
+  @media (max-width: 1000px) {
+    height: 400px;
+  }
+  @media (max-width: 700px) {
+    height: 670px;
+  }
   @media (max-width: 550px) {
     height: fit-content;
   }
@@ -65,9 +70,10 @@
   position: absolute;
   z-index: 1000;
   top: -1px;
-  left: 105%;
+  left: 25%;
   @media (max-width: 990px) {
     left: 0;
+    top: 25px;
   }
 }
 

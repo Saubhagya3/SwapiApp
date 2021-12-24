@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.scss";
 export default function Main({ allmovies }) {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [ favies, setFavies ] = useState([]);
+  const [favies, setFavies] = useState([]);
 
   const searchFunction = async (searchVal) => {
     const data = await fetch(
@@ -26,9 +26,7 @@ export default function Main({ allmovies }) {
     const movieFavourites = JSON.parse(
       localStorage.getItem("swapi-app-favourites-saubhagya3")
     );
-    movieFavourites !== null ?
-      setFavies(movieFavourites) :
-      setFavies([])
+    movieFavourites !== null ? setFavies(movieFavourites) : setFavies([]);
   }, []);
 
   const saveToLocalStorage = (items) => {
@@ -40,12 +38,14 @@ export default function Main({ allmovies }) {
 
   const addFavouriteMovie = (movies, e) => {
     e.stopPropagation();
-    console.log("Index movies", movies)
-    let found = favies.some(item => item.uid === movies.uid)
-    console.log(found)
-    if(found){
-      alert("Oops! This movie is already in your favourites. Please select another movie.")
-    }else{
+    console.log("Index movies", movies);
+    let found = favies.some((item) => item.uid === movies.uid);
+    console.log(found);
+    if (found) {
+      alert(
+        "Oops! This movie is already in your favourites. Please select another movie."
+      );
+    } else {
       const newFavouriteList = [...favies, movies];
       setFavies(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
@@ -75,10 +75,7 @@ export default function Main({ allmovies }) {
           placeholder="Search movies..."
         />
       </div>
-      <Favourites
-        favs={favies}
-        handleFavouritesClicks={removeFavouriteMovie}
-      />
+      <Favourites favs={favies} handleFavouritesClicks={removeFavouriteMovie} />
       <main className={styles.body}>
         {searchValue === "" || searchValue === null ? (
           <MovieList
@@ -100,5 +97,9 @@ export const getStaticProps = async () => {
   const res = await fetch(`https://www.swapi.tech/api/films/`);
   const allmovies = await res.json();
 
-  return { props: { allmovies } };
+  return { props: 
+              { 
+                allmovies: allmovies
+              } 
+          };
 };
