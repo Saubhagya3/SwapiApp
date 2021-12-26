@@ -6,7 +6,7 @@ Hi Nick and team!
 
 I've completed the challenge with the requirements you've sent me. 
 The website is fully responsive with search, character tooltips and persistent favourite/unfavourite function.
-Please find the Vercel link at: https://swapi-app-7tniwj2op-saubhagya3.vercel.app/
+Please find the Vercel link at: https://swapi-app-4xsrow2cf-saubhagya3.vercel.app/
 
 ## Stack
 
