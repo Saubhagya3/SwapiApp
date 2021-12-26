@@ -4,9 +4,7 @@ import styles from "../styles/Component.module.scss";
 
 export default function Characters(props) {
   const [charList, setCharList] = useState([]);
-  const [ charDetails, setCharDetails ] = useState([])
   const [loading, setLoading] = useState(true);
-  const [loadingTooltip, setLoadingTooltip] = useState(true);
 
   useEffect(() => {
     const fetchCharData = async () => {
@@ -31,20 +29,6 @@ export default function Characters(props) {
     fetchCharData();
   }, []);
 
-  const handleMouseEnter = async (url) => {
-    setCharDetails([])
-    const data = await fetch(`${url}`);
-    const json = await data.json();
-
-    setCharDetails(json.result);
-    setLoadingTooltip(false);
-  }
-
-  const handleMouseLeave = () => {
-    setLoadingTooltip(true)
-    setCharDetails([])
-  }
-
   return (
     <div>
       <h3>Characters</h3>
@@ -55,13 +39,8 @@ export default function Characters(props) {
           ) : (
             charList.map((char) => {
               return (
-                <li 
-                  key={char.uid} 
-                  className={styles.charlistitem} 
-                  onMouseEnter={() => handleMouseEnter(char.url)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Tooltip charDets={charDetails} loading={loadingTooltip} />
+                <li key={char.uid} className={styles.charlistitem}>
+                  <Tooltip url={char.url} />
                   {char.name}
                 </li>
               );

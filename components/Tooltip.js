@@ -2,29 +2,51 @@ import { useState, useEffect } from "react";
 import tooltipstyles from "../styles/Component.module.scss";
 
 export default function Tooltip(props) {
+  const [charDetails, setCharDetails] = useState([]);
+  const [loadingTooltip, setLoadingTooltip] = useState(true);
+
+  const fetchDetails = (url) => {
+    if (charDetails.length === 0 && charDetails !== null) {
+      setTimeout(async () => {
+        const data = await fetch(`${url}`);
+        const json = await data.json();
+
+        setCharDetails(json.result);
+        setLoadingTooltip(false);
+      }, 2000);
+    }
+  };
+
+  useEffect(() => {
+    fetchDetails(props.url);
+    return () => {
+      setCharDetails([]);
+    };
+  }, []);
+
   return (
     <>
-      {props.loading || props.charDets.length === 0 ? (
+      {loadingTooltip ? (
         <span className={tooltipstyles.tooltiptext}>
           Loading character info..
         </span>
       ) : (
         <span className={tooltipstyles.tooltiptext}>
-          Name: {props.charDets.properties.name}
+          Name: {charDetails.properties.name}
           <br />
-          Date of Birth: {props.charDets.properties.birth_year}
+          Date of Birth: {charDetails.properties.birth_year}
           <br />
-          Gender: {props.charDets.properties.gender}
+          Gender: {charDetails.properties.gender}
           <br />
-          Height: {props.charDets.properties.height}
+          Height: {charDetails.properties.height}
           <br />
-          Weight: {props.charDets.properties.mass}
+          Weight: {charDetails.properties.mass}
           <br />
-          Hair Color: {props.charDets.properties.hair_color}
+          Hair Color: {charDetails.properties.hair_color}
           <br />
-          Eye Color: {props.charDets.properties.eye_color}
+          Eye Color: {charDetails.properties.eye_color}
           <br />
-          Skin Color: {props.charDets.properties.skin_color}
+          Skin Color: {charDetails.properties.skin_color}
           <br />
         </span>
       )}

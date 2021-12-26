@@ -3,7 +3,7 @@
 .favourites {
   display: grid;
   width: 100%;
-  height: 60vh;
+  height: 350px;
   margin-bottom: 3rem;
   background-image: $favbackground;
   padding: 15px 15px;
@@ -25,6 +25,57 @@
   padding: 20px 0;
   height: 100%;
   white-space: nowrap;
+  .card {
+    background-color: $mainbackground;
+    padding-top: 30px;
+    min-width: 230px;
+    max-width: fit-content;
+    height: 220px;
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-family: $secondaryfont;
+    color: $secondarycolor;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 12px 18px 8px rgba(0, 0, 0, 0.62);
+    cursor: pointer;
+    transition: 0.2s;
+    @media (max-width: 1250px) {
+      margin-top: 0;
+      min-width: 250px;
+      height: 200px;
+    }
+    @media (max-width: 550px) {
+      min-width: 250px;
+      height: 180px;
+      margin-bottom: 0;
+    }
+  
+    .title {
+      font-size: 18px;
+      margin: 0;
+      text-align: center;
+      @media (max-width: 700px) {
+        font-size: 12px;
+      }
+    }
+  
+    .subtitle {
+      font-size: 16px;
+      font-weight: normal;
+      @media (max-width: 700px) {
+        font-size: 12px;
+        font-weight: 100;
+      }
+    }
+  
+    .divide {
+      font-family: monospace;
+      font-size: 32px;
+      color: white;
+      margin: 0;
+    }
+  }
 }
 
 // .favouritesBody::-webkit-scrollbar {
@@ -34,56 +85,7 @@
 //   }
 // }
 
-.card {
-  background-color: $mainbackground;
-  padding: 3rem;
-  min-width: 230px;
-  height: 220px;
-  margin-bottom: 0;
-  margin-right: 20px;
-  font-family: $secondaryfont;
-  color: $secondarycolor;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0px 12px 18px 8px rgba(0, 0, 0, 0.62);
-  cursor: pointer;
-  transition: 0.2s;
-  @media (max-width: 1250px) {
-    margin-top: 0;
-    min-width: 250px;
-    height: 200px;
-  }
-  @media (max-width: 550px) {
-    min-width: 250px;
-    height: 180px;
-    margin-bottom: 0;
-  }
 
-  .title {
-    font-size: $favtitle;
-    margin: 0;
-    text-align: center;
-    @media (max-width: 700px) {
-      font-size: 12px;
-    }
-  }
-
-  .subtitle {
-    font-size: 16px;
-    font-weight: normal;
-    @media (max-width: 700px) {
-      font-size: 12px;
-      font-weight: 100;
-    }
-  }
-
-  .divide {
-    font-family: monospace;
-    font-size: 32px;
-    color: white;
-    margin: 0;
-  }
-}
 
 .favorite {
   width: fit-content;
