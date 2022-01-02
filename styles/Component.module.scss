@@ -72,6 +72,9 @@
   @media (max-width: 550px) {
     left: 0;
   }
+  @media (max-width: 255px) {
+    width: 150px;
+  }
 }
 
 .charlistitem:hover .tooltiptext {

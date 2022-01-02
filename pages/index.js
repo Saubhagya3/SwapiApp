@@ -43,12 +43,15 @@ export default function Main({ allmovies }) {
     console.log(found);
     if (found) {
       alert(
-        "Oops! This movie is already in your favourites. Please select another movie."
+        "Oops! This movie is already in your Favourites. Please select another movie."
       );
     } else {
       const newFavouriteList = [...favies, movies];
       setFavies(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
+      alert(
+        "Movie has been added to your Favourites."
+      );
     }
   };
 
@@ -58,6 +61,9 @@ export default function Main({ allmovies }) {
 
     setFavies(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
+    alert(
+      "Movie has been removed from your Favourites."
+    );
   };
 
   return (
